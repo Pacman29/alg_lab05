@@ -29,6 +29,7 @@ void MainWindow::on_Calc_btn_clicked()
     else
         rez = integ.Integral_suc(0,M_PI_2,teta_count,0,M_PI_2,phi_count,ui->tau_sbox->value());
 
+    rez *= 4./M_PI;
     QMessageBox::information(this,tr("Результат"),QString::number(rez));
 }
 
@@ -49,12 +50,13 @@ void MainWindow::on_graph_btn_clicked()
             rez = integ.Integral_cell(0,M_PI_2,teta_count,0,M_PI_2,phi_count,tau);
         else
             rez = integ.Integral_suc(0,M_PI_2,teta_count,0,M_PI_2,phi_count,tau);
+        rez *= 4./M_PI;
         y.push_back(rez);
     }
 
     plot->graph(0)->setData(x,y);
     plot->xAxis->setRange(0,10);
-    plot->yAxis->setRange(0,1e+2);
+    plot->yAxis->setRange(0,2);
     plot->xAxis->setLabel("tau");
     plot->yAxis->setLabel("Integ");
     plot->replot();
