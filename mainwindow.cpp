@@ -59,6 +59,7 @@ void MainWindow::on_graph_btn_clicked()
     plot->yAxis->setRange(0,2);
     plot->xAxis->setLabel("tau");
     plot->yAxis->setLabel("Integ");
+    plot->setGeometry(800,200,500,500);
     plot->replot();
     plot->show();
 }

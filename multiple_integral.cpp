@@ -26,9 +26,9 @@ double multiple_integral::Integral_cell(double a, double b, unsigned int teta_co
     long double integ = 0;
 
 
-    for(double phi = a ; phi<=b-d_phi ; phi+=d_phi )
+    for(double phi = a ; phi<=b-dd_phi ; phi+=d_phi )
     {
-        for(double teta = c ; teta<=d-d_teta ; teta+=d_teta )
+        for(double teta = c ; teta<=d-dd_teta ; teta+=d_teta )
             integ+= back_func(teta+dd_teta,phi+dd_phi,tau);
 
     }

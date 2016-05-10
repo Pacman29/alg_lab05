@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+
+
 #include "multiple_integral.h"
 #include "qcustomplot.h"
 
@@ -20,7 +22,6 @@ public:
     ~MainWindow();
 
 private slots:
-
 
     void on_Calc_btn_clicked();
 
